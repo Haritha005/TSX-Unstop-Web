@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav a {
+      margin-left: 1rem;
+      color: #fff;
+      text-decoration: none;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: #e9ecef;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .project {
+      display: flex;
+      background: #fff;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+    }
+    .project img {
+      width: 200px;
+      height: auto;
+      margin-right: 1rem;
+      border-radius: 5px;
+    }
+    .project-info {
+      flex: 1;
+    }
+    .project-info h3 {
+      margin-top: 0;
+    }
+    .btn, button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="file"], textarea, input[type="text"] {
+      display: block;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      width: 100%;
+      max-width: 600px;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 2rem;
+    }
+    footer a {
+      color: #fff;
+      margin: 0 0.5rem;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Tarra Haritha</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Hi, I'm a Web Developer</h2>
+    <p>I build interactive and scalable web application</p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    Tarra Haritha is currently pursuing a B.Tech in Computer Science and Engineering at Gayatri Vidya Parishad College of Engineering for Women, Visakhapatnam.</p>
+  <p>
+    Haritha has completed virtual internships in AWS Cloud through Eduskills and in Python at ExcelR. She holds certifications in cloud computing and IoT, participated in a Learnathon by GUVI, and was a Stage 1 candidate in ATF 2024. Her technical strengths include programming languages like C, C++, and Python, as well as a understanding of DSA, OOPs, Operating Systems, DBMS, Computer Networks, and Design and Analysis of Algorithms.
+  </p>
+  <p>
+    She is skilled in using Microsoft Excel, Visual Studio Code, and Git/GitHub.  </p>
+</section>
+   </p>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+
+    <div class="project">
+      <img src="C:\Users\tarra haritha\OneDrive\Desktop\profile\simplebank.png" alt="Project Screenshot" />
+      <div class="project-info">
+        <h3>SimpleBank</h3>
+        <p>Decentralized Ethereum wallet app using Solidity smart contracts and Web3.js.</p>
+              </div>
+    </div>
+   
+        <div class="project">
+  <img src="C:\Users\tarra haritha\OneDrive\Desktop\profile\pythonproject.png" alt="Coin Collector Game" />
+  <div class="project-info">
+    <h3>Coin Collector - Python Game</h3>
+    <p>A simple interactive game developed using Python where players collect coins while avoiding obstacles. Designed to practice logic and control flow using Python basics.</p>
+      </div>
+</div>
+<div class="project">
+  <img src="C:\Users\tarra haritha\OneDrive\Desktop\profile\dataanlysis.png" alt="KNN Data Analysis" />
+  <div class="project-info">
+    <h3>Data Analysis with KNN Algorithm</h3>
+    <p>Implemented K-Nearest Neighbors (KNN) algorithm in Python to analyze datasets and make predictions. Focused on accuracy, performance tuning, and real-world use cases.</p>
+      </div>
+</div>
+
+
+    <!-- New Project Upload Form -->
+    <h3>Add a New Project</h3>
+    <form id="projectForm">
+      <input type="text" id="title" placeholder="Project Title" required />
+      <textarea id="description" placeholder="Project Description" required></textarea>
+      <input type="file" id="image" accept="image/*" required />
+      <button type="submit">Add Project</button>
+    </form>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <a class="btn" href="resume.pdf" download>Download Resume</a>
+    <form action="http://localhost:5000/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" name="resume" required />
+      <button type="submit">Upload Resume</button>
+    </form>
+  </section>
+
+  <footer id="contact">
+    <p>Contact: harithatarra123.email@example.com</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('projectForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const title = document.getElementById('title').value;
+      const description = document.getElementById('description').value;
+      const fileInput = document.getElementById('image');
+      const file = fileInput.files[0];
+
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const imgSrc = event.target.result;
+
+        const projectHTML = `
+          <div class="project">
+            <img src="${imgSrc}" alt="Uploaded Project" />
+            <div class="project-info">
+              <h3>${title}</h3>
+              <p>${description}</p>
+             </div>
+          </div>
+        `;
+
+        form.insertAdjacentHTML('beforebegin', projectHTML);
+        form.reset();
+      };
+
+      reader.readAsDataURL(file);
+    });
+  </script>
+
+</body>
+</html>
