@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Haritha Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f4f4f4;
+      color: #333;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    section {
+      margin: 40px 0;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .project {
+      margin-bottom: 20px;
+      padding: 10px;
+      border-left: 4px solid #3498db;
+      background-color: #f9f9f9;
+      border-radius: 4px;
+    }
+    a.download {
+      display: inline-block;
+      margin-top: 10px;
+      color: #fff;
+      background: #2ecc71;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    form {
+      margin-top: 15px;
+    }
+    input[type="file"] {
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 8px 12px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Haritha Portfolio</h1>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am Tarra Haritha, currently pursuing a B.Tech in Computer Science and Engineering. I am passionate about full stack development and data analysis using Python. I love creating user-friendly projects and exploring new technologies.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+
+    <div class="project">
+      <h3>Coin Collector - Python Game</h3>
+      <p>A fun game created using Python, implementing logic, loops, and conditionals to engage players in coin collection.</p>
+    </div>
+
+    <div class="project">
+      <h3>Portfolio Website</h3>
+      <p>This website itself! Built with HTML, CSS, and a touch of JS to showcase my skills and resume.</p>
+    </div>
+
+    <div class="project">
+      <h3>KNN Data Analysis</h3>
+      <p>Used Python with scikit-learn to analyze and classify datasets using the K-Nearest Neighbors algorithm.</p>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <a class="download" href="/resume/YourResume.pdf" download>📥 Download My Resume</a>
+
+    <h3>Upload a Resume (Demo)</h3>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" name="resume" required />
+      <button type="submit">Upload Resume</button>
+    </form>
+  </section>
+
+</body>
+</html>
